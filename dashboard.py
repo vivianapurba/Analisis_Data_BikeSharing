@@ -7,6 +7,7 @@ import scipy.stats as stats
 
 st.set_page_config(page_title="Bike Sharing", layout="wide")
 st.title("Bike Sharing Dashboard by Viviana Purba")
+st.markdown("---")
 
 # Load cleaned data
 bikesharing_clean = all_df = pd.read_csv("bikesharing_clean.csv")
@@ -27,8 +28,6 @@ with container:
         ax.legend(loc='upper right')
         ax.set_xticks(range(1, 13))
         st.pyplot(fig)
-
-    st.markdown("---")
 
     # Plot 2: Perubahan Total Sepeda yang Dirental dalam Seminggu
     category = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
@@ -59,7 +58,7 @@ with container:
 
     # Plot 4: Total rental sepeda dalam 1 hari berdasarkan musim
     with col2:
-        fig, ax = plt.subplots(figsize=(12, 6))
+        fig, ax = plt.subplots(figsize=(10, 6))
         sns.pointplot(data=all_df[['hour','total_count','season']],x='hour',y='total_count',hue='season',ax=ax, palette='Set1')
         ax.set(title="Total rental sepeda dalam 1 hari berdasarkan musim")
         ax.set_xlabel('Jam')
