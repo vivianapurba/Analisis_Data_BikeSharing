@@ -59,7 +59,7 @@ with container:
 
     # Plot 4: Total rental sepeda dalam 1 hari berdasarkan musim
     with col2:
-        fig, ax = plt.subplots(figsize=(12, 6))
+        fig, ax = plt.subplots(figsize=(10, 6))
         sns.pointplot(data=all_df[['hour','total_count','season']],x='hour',y='total_count',hue='season',ax=ax, palette='Set1')
         ax.set(title="Total rental sepeda dalam 1 hari berdasarkan musim")
         ax.set_xlabel('Jam')
